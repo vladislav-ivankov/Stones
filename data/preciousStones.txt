@@ -1,4 +1,4 @@
-Diamond, 1, 1, 3
-Ruby
-Sapphire
-Emerald
+Diamond 3 2500 3
+Ruby 2.4 2000 5
+Sapphire 4.5 2300 7
+Emerald 1.5 1200 10

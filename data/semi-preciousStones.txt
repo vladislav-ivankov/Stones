@@ -1,5 +1,5 @@
-Amethyst
-Citrine
-Blue Topaz
-Peridot
-Aquamarine
+Amethyst 3 500 6
+Citrine 2.5 700 3
+Topaz 6 1200 5
+Peridot 1.5 500 4
+Aquamarine 7 1500 8
