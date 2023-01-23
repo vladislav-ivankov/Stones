@@ -8,36 +8,23 @@ import java.util.StringJoiner;
 
 public class Necklace {
     private int necklaceId;
-    private List<Stone> stones = new ArrayList<>();
-    private List<PreciousStones> preciousStones;
-    private List<SemipreciousStones> semipreciousStones;
+    private List<Stone> stones;
 
-    public Necklace(List<PreciousStones> preciousStones, List<SemipreciousStones> semipreciousStones){
+    public Necklace(List<Stone> stones){
         this.necklaceId = NecklaceIdGenerator.necklaceId();
-        this.preciousStones = preciousStones;
-        this.semipreciousStones = semipreciousStones;
-        setStones(preciousStones, semipreciousStones);
+        this.stones = stones;
     }
 
     public int getNecklaceId() {
         return necklaceId;
     }
 
+    public void setStones(List<Stone> stones) {
+        this.stones = stones;
+    }
+
     public List<Stone> getStones() {
         return stones;
-    }
-
-    public List<PreciousStones> getPreciousStones() {
-        return preciousStones;
-    }
-
-    public List<SemipreciousStones> getSemipreciousStones() {
-        return semipreciousStones;
-    }
-
-    public void setStones(List<PreciousStones> preciousStones, List<SemipreciousStones> semipreciousStones) {
-        this.stones.addAll(preciousStones);
-        this.stones.addAll(semipreciousStones);
     }
 
     @Override
@@ -45,8 +32,6 @@ public class Necklace {
         return new StringJoiner(", ", Necklace.class.getSimpleName() + "[", "]")
                 .add("id = " + necklaceId)
                 .add("stones=" + stones)
-                .add("preciousStones=" + preciousStones)
-                .add("semipreciousStones=" + semipreciousStones)
                 .toString();
     }
 }

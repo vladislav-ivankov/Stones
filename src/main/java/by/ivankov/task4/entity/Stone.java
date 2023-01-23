@@ -4,31 +4,28 @@ import by.ivankov.task4.util.StoneIdGenerator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.util.Objects;
 import java.util.StringJoiner;
 
 public class Stone {
-    Logger logger = LogManager.getLogger();
+    static Logger logger = LogManager.getLogger();
     private int stoneId;
     private String name;
     private double weight;
     private int price;
     private int transparency;
+    private String jewel;
 
     public Stone() {
     }
 
-    public Stone(String name, double weight, int price, int transparency) {
+    public Stone(String name, double weight, int price, int transparency, String jewel) {
         this.stoneId = StoneIdGenerator.stoneId();
         this.name = name;
         this.weight = weight;
         this.price = price;
         setTransparency(transparency);
-    }
-
-    public int getStoneId() {
-        return stoneId;
+        this.jewel = jewel;
     }
 
     public String getName() {
@@ -41,6 +38,10 @@ public class Stone {
 
     public int getPrice() {
         return price;
+    }
+
+    public String getJewel(){
+        return jewel;
     }
 
     public void setTransparency(int transparency) {
@@ -60,9 +61,10 @@ public class Stone {
         return new StringJoiner(", ", "\n" + "[", "]")
                 .add("Id = " + stoneId)
                 .add("name = '" + name + "'")
-                .add("weight = " + weight)
-                .add("price = " + price)
+                .add("weight = " + weight + " ct.")
+                .add("price = " + price + "$")
                 .add("transparency = " + transparency)
+                .add("jewel = " + jewel)
                 .toString();
     }
 
@@ -76,6 +78,12 @@ public class Stone {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, weight, price, transparency);
+        int result = stoneId;
+        result = 31 * result + Objects.hash(name);
+        result = 31 * result + Objects.hash(weight);
+        result = 31 * result + price;
+        result = 31 * result + transparency;
+        result = 31 * result + Objects.hash(jewel);
+        return result;
     }
 }

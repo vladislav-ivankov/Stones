@@ -10,8 +10,8 @@ public class CalculationServiceImpl implements CalculationService {
     @Override
     public double weightCalculation(List<Stone> stones) {
         double result = 0;
-        for (int i = 0; i < stones.size(); i++) {
-            result += stones.get(i).getWeight();
+        for (Stone i : stones) {
+            result += i.getWeight();
         }
         return result;
     }
@@ -19,8 +19,8 @@ public class CalculationServiceImpl implements CalculationService {
     @Override
     public int priceCalculation(List<Stone> stones) {
         int result = 0;
-        for (int i = 0; i < stones.size(); i++) {
-            result += stones.get(i).getPrice();
+        for (Stone i : stones) {
+            result += i.getPrice();
         }
         return result;
     }

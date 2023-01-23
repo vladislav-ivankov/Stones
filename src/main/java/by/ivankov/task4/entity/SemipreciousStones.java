@@ -1,11 +1,22 @@
 package by.ivankov.task4.entity;
 
+import java.util.StringJoiner;
+
 public class SemipreciousStones extends Stone {
 
-    public SemipreciousStones(String name, double weight, int price, int transparency) {
-        super(name, weight, price, transparency);
+    public enum Hardness{
+        HARD, MEDIUM, SOFT
     }
+    private Hardness hardness;
+    public SemipreciousStones(Stone stone, Hardness hardness) {
+        super(stone.getName(), stone.getWeight(), stone.getPrice(), stone.getTransparency(), stone.getJewel());
+        this.hardness = hardness;
+    }
+
+    @Override
     public String toString() {
-        return (super.toString()) + " - semi-precious";
+        return new StringJoiner(", ", SemipreciousStones.class.getSimpleName() + "[", "]")
+                .add("hardness=" + hardness)
+                .toString();
     }
 }
