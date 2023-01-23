@@ -1,0 +1,9 @@
+Diamond 3 2500 3 precious
+Ruby 2.4 2000 5 precious
+Sapphire 4.5 2300 7 precious
+Emerald 1.5 1200 10 precious
+Amethyst 3 500 6 semi-precious
+Citrine 2.5 700 3 semi-precious
+Topaz 6 1200 5 semi-precious
+Peridot 1.5 500 4 semi-precious
+Aquamarine 7 1500 8 semi-precious
