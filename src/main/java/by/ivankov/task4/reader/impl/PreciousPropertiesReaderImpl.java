@@ -1,6 +1,6 @@
 package by.ivankov.task4.reader.impl;
 
-import by.ivankov.task4.entity.PreciousStones;
+import by.ivankov.task4.entity.PreciousStone;
 import by.ivankov.task4.reader.PreciousPropertiesReader;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -13,7 +13,7 @@ import java.util.Properties;
 public class PreciousPropertiesReaderImpl implements PreciousPropertiesReader {
     static Logger logger = LogManager.getLogger();
 
-    public PreciousStones propertyRead(String fileName){
+    public PreciousStone propertyRead(String fileName){
         Properties properties = new Properties();
         try {
             properties.load(new FileReader(fileName));

@@ -2,17 +2,17 @@ package by.ivankov.task4.entity;
 
 import java.util.StringJoiner;
 
-public class SemipreciousStones extends Stone {
+public class SemipreciousStone extends Stone {
 
     public enum Hardness{
         HARD, MEDIUM, SOFT
     }
     private Hardness hardness;
 
-    public SemipreciousStones(Hardness hardness){
+    public SemipreciousStone(Hardness hardness){
         setHardness(hardness);
     }
-    public SemipreciousStones(Stone stone) {
+    public SemipreciousStone(Stone stone) {
         super(stone.getName(), stone.getWeight(), stone.getPrice(), stone.getTransparency(), stone.getJewel());
     }
     public Hardness getHardness(){
@@ -36,7 +36,7 @@ public class SemipreciousStones extends Stone {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
 
-        SemipreciousStones that = (SemipreciousStones) o;
+        SemipreciousStone that = (SemipreciousStone) o;
 
         return hardness == that.hardness;
     }

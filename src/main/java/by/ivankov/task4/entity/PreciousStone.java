@@ -3,16 +3,16 @@ package by.ivankov.task4.entity;
 
 import java.util.StringJoiner;
 
-public class PreciousStones extends Stone {
+public class PreciousStone extends Stone {
 
     public enum Cutting{
         ROUND, PEAR, SQUARE, HEART
     }
     private Cutting cutting;
-    public PreciousStones(Cutting cutting){
+    public PreciousStone(Cutting cutting){
         setCutting(cutting);
     };
-    public PreciousStones(Stone stone){
+    public PreciousStone(Stone stone){
         super(stone.getName(), stone.getWeight(), stone.getPrice(), stone.getTransparency(), stone.getJewel());
     }
 
@@ -37,7 +37,7 @@ public class PreciousStones extends Stone {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
 
-        PreciousStones that = (PreciousStones) o;
+        PreciousStone that = (PreciousStone) o;
 
         return cutting == that.cutting;
     }
