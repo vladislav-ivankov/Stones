@@ -21,10 +21,30 @@ public class Stone {
 
     public Stone(String name, double weight, int price, int transparency, String jewel) {
         this.stoneId = StoneIdGenerator.stoneId();
-        this.name = name;
-        this.weight = weight;
-        this.price = price;
+        setName(name);
+        setWeight(weight);
+        setPrice(price);
         setTransparency(transparency);
+        setJewel(jewel);
+    }
+
+    public int getStoneId() {
+        return stoneId;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void setJewel(String jewel) {
         this.jewel = jewel;
     }
 
@@ -58,7 +78,7 @@ public class Stone {
 
     @Override
     public String toString() {
-        return new StringJoiner(", ", "\n" + "[", "]")
+        return new StringJoiner(", " , "\n" + "[", "")
                 .add("Id = " + stoneId)
                 .add("name = '" + name + "'")
                 .add("weight = " + weight + " ct.")
@@ -72,18 +92,28 @@ public class Stone {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Stone stones = (Stone) o;
-        return Double.compare(stones.weight, weight) == 0 && price == stones.price && transparency == stones.transparency && Objects.equals(name, stones.name);
+
+        Stone stone = (Stone) o;
+
+        if (stoneId != stone.stoneId) return false;
+        if (Double.compare(stone.weight, weight) != 0) return false;
+        if (price != stone.price) return false;
+        if (transparency != stone.transparency) return false;
+        if (!Objects.equals(name, stone.name)) return false;
+        return Objects.equals(jewel, stone.jewel);
     }
 
     @Override
     public int hashCode() {
-        int result = stoneId;
-        result = 31 * result + Objects.hash(name);
-        result = 31 * result + Objects.hash(weight);
+        int result;
+        long temp;
+        result = stoneId;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        temp = Double.doubleToLongBits(weight);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
         result = 31 * result + price;
         result = 31 * result + transparency;
-        result = 31 * result + Objects.hash(jewel);
+        result = 31 * result + (jewel != null ? jewel.hashCode() : 0);
         return result;
     }
 }

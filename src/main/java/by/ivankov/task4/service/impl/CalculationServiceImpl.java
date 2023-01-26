@@ -8,7 +8,7 @@ import java.util.List;
 public class CalculationServiceImpl implements CalculationService {
 
     @Override
-    public double weightCalculation(List<Stone> stones) {
+    public double weightCalculation(List<Stone> stones){
         double result = 0;
         for (Stone i : stones) {
             result += i.getWeight();

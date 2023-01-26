@@ -1,4 +1,4 @@
-Diamond 3 2500 3 precious
+Diamond 3.7 2500 3 precious
 Ruby 2.4 2000 5 precious
 Sapphire 4.5 2300 7 precious
 Emerald 1.5 1200 10 precious

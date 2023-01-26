@@ -9,7 +9,6 @@ import org.apache.logging.log4j.Logger;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
-import java.util.Set;
 
 public class PreciousPropertiesReaderImpl implements PreciousPropertiesReader {
     static Logger logger = LogManager.getLogger();
